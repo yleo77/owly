@@ -1,7 +1,6 @@
 
 module.exports = function(grunt) {
 
-  var UglifyJS = require("uglify-js");
   var old_browser = grunt.file.readJSON('config.json').old_browser;
 
   grunt.initConfig({
