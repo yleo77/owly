@@ -5,16 +5,18 @@
   };
 
   var extend = function(target, source) {
-    if (source) {
-      for (var key in source) {
-        if (typeof source[key] === 'object') {
-          target[key] = target[key] || (Array.isArray(source[key]) ? [] : {});
-          extend(target[key], source[key]);
-        } else {
-          source.hasOwnProperty(key) && (target[key] = source[key]);
-        }
-      }
+    if (target && !source) {
+      source = target;
+      target = {};
     }
+
+    for (var i in source) {
+      if (!source.hasOwnProperty(i)) {
+        continue;
+      }
+      target[i] = source[i];
+    }
+
     return target;
   };
 
@@ -234,7 +236,9 @@
   //   this.Owly = Owly;
   //   this.owly = owly;
   // }
-    this.Owly = Owly;
-    this.owly = new Owly({cache: true});
+  this.Owly = Owly;
+  this.owly = new Owly({
+    cache: true
+  });
 
 }).call(this);
