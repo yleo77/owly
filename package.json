@@ -12,6 +12,10 @@
   "scripts": {
     "test": "mocha test/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yleo77/owly.git"
+  },
   "author": "yleo77",
   "license": "MIT"
 }
